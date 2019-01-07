@@ -16,6 +16,7 @@ naver_secret = os.getenv('NAVER_SECRET')
 
 # set Webhook = request telegram for sending alram whenever a message is sent
 
+
 @app.route('/setWebhook')
 def setWebhook() :
     baseUrl = "https://api.hphk.io/telegram" # replace api.telegram.org
@@ -30,9 +31,9 @@ def setWebhook() :
 @app.route('/{}'.format(token), methods=['POST'])
 def telegram() :
     doc = request.get_json()
-    pp(doc)
+
     # for every messages, this chatbot say 'shut up'
-    baseUrl = "https://api.hphk.io/telegram/"
+    baseUrl = "https://api.hphk.io/telegram"
     chat_id = doc['message']['chat']['id']
     #sentMessage = doc['message']['text']
     #sendMessage = ""
